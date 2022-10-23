@@ -41,7 +41,7 @@ public class ContactMessageController {
 
     private ContactMessageMapper contactMessageMapper;
 
-
+     // POST  localhost:8080/contactmessage/visitors
     @PostMapping("/visitors")
     public ResponseEntity<VRResponse> createMessage(@Valid @RequestBody ContactMessageRequest contactMessageRequest){
 
@@ -53,7 +53,7 @@ public class ContactMessageController {
         return new ResponseEntity<>(response,HttpStatus.CREATED);
     }
 
-
+    // GET localhost:8080/contactmessage
     @GetMapping
     public ResponseEntity<List<ContactMessageDTO>> getAllContactMessage(){
         List<ContactMessage> contactMessageList= contactMessageService.getAll();
@@ -63,8 +63,7 @@ public class ContactMessageController {
 
     }
 
-    //http://localhost:8080/contactmessage/pages?page=0&size=1&sort=id&direction=ASC
-
+    // GET  localhost:8080/contactmessage/pages?page=0&size=2&sort=name&direction=ASC
     @GetMapping("/pages")
     public ResponseEntity<Page<ContactMessageDTO>> getAllContactMessageWithPage(@RequestParam("page") int page,@RequestParam("size") int size,
                                                                                 @RequestParam("sort") String prop,
@@ -78,6 +77,7 @@ public class ContactMessageController {
         return ResponseEntity.ok(pageDTO);
     }
 
+    // GET localhost:8080/contactmessage/2
     @GetMapping("/{id}")
     public ResponseEntity<ContactMessageDTO> getMessageWithPath(@PathVariable("id") Long id){
         ContactMessage contactMessage = contactMessageService.getContactMessage(id);
@@ -86,6 +86,7 @@ public class ContactMessageController {
         return ResponseEntity.ok(contactMessageDTO);
     }
 
+    // GET localhost:8080/contactmessage/request?id=2
     @GetMapping("/request")
     public ResponseEntity<ContactMessageDTO> getMessageWithRequestParam(@RequestParam("id") Long id){
         ContactMessage contactMessage = contactMessageService.getContactMessage(id);
@@ -94,7 +95,7 @@ public class ContactMessageController {
         return ResponseEntity.ok(contactMessageDTO);
     }
 
-
+    // DELETE localhost:8080/contactmessage/1
     @DeleteMapping("/{id}")
     public ResponseEntity<VRResponse> deleteContactMessage(@PathVariable Long id){
         contactMessageService.deleteContactMessage(id);
@@ -103,6 +104,7 @@ public class ContactMessageController {
         return ResponseEntity.ok(vrResponse);
     }
 
+    // PUT localhost:8080/contactmessage/3
     @PutMapping("/{id}")
     public ResponseEntity<VRResponse> updateContactMessage(@PathVariable Long id,@Valid @RequestBody ContactMessageRequest contactMessageRequest ){
 
@@ -112,10 +114,7 @@ public class ContactMessageController {
 
         VRResponse vrResponse=new VRResponse(ResponseMessage.CONTACTMESSAGE_UPDATE_RESPONSE_MESSAGE, true);
         return ResponseEntity.ok(vrResponse);
-
     }
-
-
 
     private Page<ContactMessageDTO> getPageDTO(Page<ContactMessage>  contactMessagePage){
         Page<ContactMessageDTO> dtoPage= contactMessagePage.map( new Function<ContactMessage, ContactMessageDTO>() {
@@ -124,10 +123,6 @@ public class ContactMessageController {
                 return contactMessageMapper.contactMessageToDTO(contactMessage);
             }
         });
-
         return dtoPage;
     }
-
-
-
 }
