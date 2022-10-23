@@ -10,6 +10,7 @@ import com.visionrent.exception.message.ErrorMessage;
 import com.visionrent.repository.UserRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -17,16 +18,22 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Service
-@AllArgsConstructor
 public class UserService {
 
-    @Autowired
+
     private UserRepository userRepository;
 
-    @Autowired
+
     private RoleService roleService;
 
     private PasswordEncoder passwordEncoder;
+
+
+    public UserService(UserRepository userRepository,RoleService roleService,@Lazy PasswordEncoder passwordEncoder){
+        this.userRepository = userRepository;
+        this.roleService=roleService;
+        this.passwordEncoder=passwordEncoder;
+    }
 
     public void saveUser(RegisterRequest registerRequest) {
 

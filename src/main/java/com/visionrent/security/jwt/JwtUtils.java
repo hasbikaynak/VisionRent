@@ -1,11 +1,11 @@
 package com.visionrent.security.jwt;
 
 import com.visionrent.exception.message.ErrorMessage;
-import com.visionrent.security.service.UserDetailsImpl;
 import io.jsonwebtoken.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
 import java.util.Date;
@@ -22,11 +22,11 @@ public class JwtUtils {
     @Value("${visionrent.app.jwtSecret}")
     private String jwtSecret;
 
-    public String generateJwtToken(UserDetailsImpl userDetails){
+    public String generateJwtToken(UserDetails userDetails){
        return Jwts.builder().setSubject(userDetails.getUsername()).
                 setIssuedAt(new Date()).
                 setExpiration(new Date(new Date().getTime()+jwtExpirationMs)).
-                signWith(SignatureAlgorithm.ES512,jwtSecret).
+                signWith(SignatureAlgorithm.HS512,jwtSecret).
                 compact();
     }
 
