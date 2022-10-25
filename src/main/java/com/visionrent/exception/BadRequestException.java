@@ -1,13 +1,14 @@
 package com.visionrent.exception;
 
-public class ConflictException extends RuntimeException{
+
+public class BadRequestException extends RuntimeException {
 
     /**
      *
      */
     private static final long serialVersionUID = 1L;
 
-    public ConflictException(String message) {
+    public BadRequestException(String message) {
         super(message);
     }
 

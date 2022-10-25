@@ -1,20 +1,26 @@
 package com.visionrent.security.jwt;
 
-import com.visionrent.exception.message.ErrorMessage;
-import io.jsonwebtoken.*;
+import java.util.Date;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
-import java.util.Date;
+import com.visionrent.exception.message.ErrorMessage;
+
+import io.jsonwebtoken.ExpiredJwtException;
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.MalformedJwtException;
+import io.jsonwebtoken.SignatureAlgorithm;
+import io.jsonwebtoken.SignatureException;
+import io.jsonwebtoken.UnsupportedJwtException;
 
 @Component
 public class JwtUtils {
-    //generate token, validate token,get email from token
 
-    private static final Logger logger= LoggerFactory.getLogger(JwtUtils.class);
+    private static final Logger logger=LoggerFactory.getLogger(JwtUtils.class);
 
     @Value("${visionrent.app.jwtExpirationMs}")
     private long jwtExpirationMs;
@@ -22,13 +28,12 @@ public class JwtUtils {
     @Value("${visionrent.app.jwtSecret}")
     private String jwtSecret;
 
-    public String generateJwtToken(UserDetails userDetails){
-       return Jwts.builder().setSubject(userDetails.getUsername()).
-                setIssuedAt(new Date()).
-                setExpiration(new Date(new Date().getTime()+jwtExpirationMs)).
-                signWith(SignatureAlgorithm.HS512,jwtSecret).
-                compact();
+
+    public String generateJwtToken(UserDetails userDetails) {
+        return Jwts.builder().setSubject(userDetails.getUsername()).setIssuedAt(new Date()).
+                setExpiration(new Date(new Date().getTime()+jwtExpirationMs)).signWith(SignatureAlgorithm.HS512, jwtSecret).compact();
     }
+
 
     public String getEmailFromToken(String token) {
         return Jwts .parser().setSigningKey(jwtSecret).parseClaimsJws(token).getBody().getSubject();
@@ -45,4 +50,7 @@ public class JwtUtils {
         }
 
         return false;
-    }}
+    }
+
+
+}

@@ -40,11 +40,13 @@ public class AuthTokenFilter extends OncePerRequestFilter {
                 String email= jwtUtils.getEmailFromToken(jwtToken);
                 UserDetails userDetails= userDetailsService.loadUserByUsername(email);
 
+                //request.setAttribute(email, jwtToken);
+
                 UsernamePasswordAuthenticationToken authenticationToken=new
                         UsernamePasswordAuthenticationToken(userDetails,null,userDetails.getAuthorities());
 
-                SecurityContextHolder.getContext().setAuthentication(authenticationToken); // this will put the user into contextholder so we can reach current user infos by
-                //controllers
+
+                SecurityContextHolder.getContext().setAuthentication(authenticationToken);
 
             }
         } catch (Exception e) {
@@ -55,7 +57,7 @@ public class AuthTokenFilter extends OncePerRequestFilter {
 
     }
 
-    private String parseJwt(HttpServletRequest request) { //in the header request token starts with bearer and one whitespace that`s why we have to manipulate the string
+    private String parseJwt(HttpServletRequest request) {
         String header= request.getHeader("Authorization");
         if(StringUtils.hasText(header) && header.startsWith("Bearer ")) {
             return header.substring(7);

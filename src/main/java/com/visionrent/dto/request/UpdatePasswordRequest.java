@@ -1,6 +1,5 @@
 package com.visionrent.dto.request;
 
-import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 
 import lombok.AllArgsConstructor;
@@ -12,11 +11,12 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class LoginRequest {
+public class UpdatePasswordRequest {
 
-    @Email(message="Please provide a valid email")
-    private String email;
+    @NotBlank(message="Please Provide Old Password")
+    private String oldPassword;
 
-    @NotBlank(message="Please Provide a passord")
-    private String password;
+    @NotBlank(message="Please Provide New Password")
+    private String newPassword;
+
 }

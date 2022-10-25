@@ -1,5 +1,6 @@
 package com.visionrent.mapper;
 
+import java.util.List;
 
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
@@ -7,7 +8,7 @@ import org.mapstruct.Mapping;
 import com.visionrent.domain.ContactMessage;
 import com.visionrent.dto.ContactMessageDTO;
 import com.visionrent.dto.request.ContactMessageRequest;
-import java.util.List;
+
 @Mapper(componentModel="spring")
 public interface ContactMessageMapper {
 
@@ -16,24 +17,6 @@ public interface ContactMessageMapper {
 
     ContactMessageDTO contactMessageToDTO(ContactMessage contactMessage);
 
-
-    List<ContactMessageDTO> map(List<ContactMessage> contactMessageList);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    List<ContactMessageDTO> map(List<ContactMessage> concatMessageList);
 
 }

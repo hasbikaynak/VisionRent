@@ -23,7 +23,7 @@ public class ContactMessageService {
         contactMessageRepository.save(contactMessage);
     }
 
-    public List<ContactMessage> getAll() {
+    public List<ContactMessage> getAll(){
         return contactMessageRepository.findAll();
     }
 
@@ -31,16 +31,14 @@ public class ContactMessageService {
         return contactMessageRepository.findAll(pageable);
     }
 
-
     public ContactMessage getContactMessage(Long id) {
-        ContactMessage contactMessage= contactMessageRepository.findById(id).orElseThrow(()->new
-                ResourceNotFoundException(String.format(ErrorMessage.RESOURCE_NOT_FOUND_MESSAGE, id)));
+        ContactMessage contactMessage = contactMessageRepository.findById(id).orElseThrow(()->
+                new ResourceNotFoundException(String.format(ErrorMessage.RESOURCE_NOT_FOUND_MESSAGE, id)));
         return contactMessage;
     }
 
-
     public void updateContactMessage(Long id, ContactMessage contactMessage) {
-        ContactMessage foundContactMessage = getContactMessage(id);
+        ContactMessage foundContactMessage= getContactMessage(id);
 
         foundContactMessage.setName(contactMessage.getName());
         foundContactMessage.setSubject(contactMessage.getSubject());
@@ -49,6 +47,7 @@ public class ContactMessageService {
 
         contactMessageRepository.save(foundContactMessage);
     }
+
 
     public void deleteContactMessage(Long id) {
         ContactMessage message= getContactMessage(id);

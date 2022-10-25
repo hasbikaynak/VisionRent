@@ -22,13 +22,14 @@ public class ApiResponseError {
         timestamp=LocalDateTime.now();
     }
 
+
     public ApiResponseError(HttpStatus status) {
         this();
         this.message="Unexpected Error";
         this.status=status;
     }
 
-    public ApiResponseError(HttpStatus status,String message, String requestURI) {
+    public ApiResponseError(HttpStatus status, String message, String requestURI) {
         this(status);
         this.message=message;
         this.requestURI=requestURI;
@@ -44,6 +45,10 @@ public class ApiResponseError {
         this.status = status;
     }
 
+
+    public LocalDateTime getTimestamp() {
+        return timestamp;
+    }
 
     public String getMessage() {
         return message;
@@ -63,12 +68,6 @@ public class ApiResponseError {
     public void setRequestURI(String requestURI) {
         this.requestURI = requestURI;
     }
-
-
-    public LocalDateTime getTimestamp() {
-        return timestamp;
-    }
-
 
 
 }
