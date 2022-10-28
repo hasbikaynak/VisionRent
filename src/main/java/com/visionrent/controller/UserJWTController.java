@@ -39,7 +39,7 @@ public class UserJWTController {
 
         VRResponse response=new VRResponse();
         response.setMessage(ResponseMessage.REGISTER_RESPONSE_MESSAGE);
-        response.setSucess(true);
+        response.setSuccess(true);
 
         return new ResponseEntity<>(response,HttpStatus.CREATED);
 

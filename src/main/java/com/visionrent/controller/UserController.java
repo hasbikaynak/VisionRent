@@ -77,7 +77,7 @@ public class UserController {
 
         VRResponse response=new VRResponse();
         response.setMessage(ResponseMessage.PASSWORD_CHANGED_RESPONSE_MESSAGE);
-        response.setSucess(true);
+        response.setSuccess(true);
 
         return ResponseEntity.ok(response);
 
@@ -91,7 +91,7 @@ public class UserController {
 
         VRResponse response = new VRResponse();
         response.setMessage(ResponseMessage.USER_UPDATE_RESPONSE_MESSAGE);
-        response.setSucess(true);
+        response.setSuccess(true);
     return ResponseEntity.ok(response);
     }
 
@@ -104,7 +104,7 @@ public class UserController {
 
         VRResponse response = new VRResponse();
         response.setMessage(ResponseMessage.USER_UPDATE_RESPONSE_MESSAGE);
-        response.setSucess(true);
+        response.setSuccess(true);
         return ResponseEntity.ok(response);
     }
 
@@ -115,7 +115,7 @@ public class UserController {
         userService.deleteUserById(id);
         VRResponse response = new VRResponse();
         response.setMessage(ResponseMessage.USER_DELETE_RESPONSE_MESSAGE);
-        response.setSucess(true);
+        response.setSuccess(true);
         return ResponseEntity.ok(response);
     }
 

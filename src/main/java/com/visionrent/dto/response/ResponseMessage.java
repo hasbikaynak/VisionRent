@@ -10,5 +10,6 @@ public class ResponseMessage {
     public final static String PASSWORD_CHANGED_RESPONSE_MESSAGE="Password Successfully Changed";
 
     public final static String USER_UPDATE_RESPONSE_MESSAGE="User Successfully Updated";
+    public final static String IMAGE_SAVED_RESPONSE_MESSAGE="Image Successfully Saved";
 
 }

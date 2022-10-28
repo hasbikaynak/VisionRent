@@ -12,5 +12,5 @@ import lombok.Setter;
 public class VRResponse {
 
     private String message;
-    boolean sucess;
+    boolean success;
 }
