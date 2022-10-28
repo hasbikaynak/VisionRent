@@ -26,3 +26,37 @@
 2022-10-28 09:13:11,157 INFO  [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatWebServer:Tomcat started on port(s): 8080 (http) with context path ''
 2022-10-28 09:13:11,265 INFO  [restartedMain] com.visionrent.VisionrentApplication:Started VisionrentApplication in 21.461 seconds (JVM running for 24.591)
 2022-10-28 09:15:22,647 INFO  [http-nio-8080-exec-1] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]:Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-10-28 09:27:06,953 INFO  [SpringApplicationShutdownHook] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean:Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-10-28 09:27:06,970 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource:HikariPool-1 - Shutdown initiated...
+2022-10-28 09:27:06,996 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource:HikariPool-1 - Shutdown completed.
+2022-10-28 09:27:17,799 INFO  [restartedMain] com.visionrent.VisionrentApplication:Starting VisionrentApplication using Java 11.0.14 on Olaf with PID 12348 (C:\Users\CEM\OneDrive\Masaüstü\visionrent\visionrent\target\classes started by CEM in C:\Users\CEM\OneDrive\Masaüstü\visionrent\visionrent)
+2022-10-28 09:27:17,802 DEBUG [restartedMain] com.visionrent.VisionrentApplication:Running with Spring Boot v2.7.4, Spring v5.3.23
+2022-10-28 09:27:17,803 INFO  [restartedMain] com.visionrent.VisionrentApplication:No active profile set, falling back to 1 default profile: "default"
+2022-10-28 09:27:18,005 INFO  [restartedMain] org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor:Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-10-28 09:27:18,005 INFO  [restartedMain] org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor:For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-10-28 09:27:21,410 INFO  [restartedMain] org.springframework.data.repository.config.RepositoryConfigurationDelegate:Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-10-28 09:27:21,679 INFO  [restartedMain] org.springframework.data.repository.config.RepositoryConfigurationDelegate:Finished Spring Data repository scanning in 241 ms. Found 4 JPA repository interfaces.
+2022-10-28 09:27:24,807 INFO  [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatWebServer:Tomcat initialized with port(s): 8080 (http)
+2022-10-28 09:27:24,834 INFO  [restartedMain] org.apache.catalina.core.StandardService:Starting service [Tomcat]
+2022-10-28 09:27:24,835 INFO  [restartedMain] org.apache.catalina.core.StandardEngine:Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-10-28 09:27:25,073 INFO  [restartedMain] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]:Initializing Spring embedded WebApplicationContext
+2022-10-28 09:27:25,073 INFO  [restartedMain] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext:Root WebApplicationContext: initialization completed in 7067 ms
+2022-10-28 09:27:25,970 INFO  [restartedMain] org.hibernate.jpa.internal.util.LogHelper:HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-10-28 09:27:26,148 INFO  [restartedMain] org.hibernate.Version:HHH000412: Hibernate ORM core version 5.6.11.Final
+2022-10-28 09:27:26,589 INFO  [restartedMain] org.hibernate.annotations.common.Version:HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-10-28 09:27:26,868 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource:HikariPool-1 - Starting...
+2022-10-28 09:27:27,264 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource:HikariPool-1 - Start completed.
+2022-10-28 09:27:27,305 INFO  [restartedMain] org.hibernate.dialect.Dialect:HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL9Dialect
+2022-10-28 09:27:29,484 INFO  [restartedMain] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator:HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-10-28 09:27:29,504 INFO  [restartedMain] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean:Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-10-28 09:27:30,826 DEBUG [restartedMain] com.visionrent.security.jwt.AuthTokenFilter:Filter 'authTokenFilter' configured for use
+2022-10-28 09:27:31,530 INFO  [restartedMain] org.springframework.security.web.DefaultSecurityFilterChain:Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@704a68c7, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@46fc9866, org.springframework.security.web.context.SecurityContextPersistenceFilter@5b70897, org.springframework.security.web.header.HeaderWriterFilter@23f65dd6, org.springframework.security.web.authentication.logout.LogoutFilter@5b2b90f4, com.visionrent.security.jwt.AuthTokenFilter@47045e9e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7daf5d9f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7e8e3a3e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@181d96a7, org.springframework.security.web.session.SessionManagementFilter@20bfd142, org.springframework.security.web.access.ExceptionTranslationFilter@4b030e0d, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@f6ced6]
+2022-10-28 09:27:31,659 WARN  [restartedMain] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration:spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-10-28 09:27:33,641 INFO  [restartedMain] org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer:LiveReload server is running on port 35729
+2022-10-28 09:27:33,676 INFO  [restartedMain] org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver:Exposing 15 endpoint(s) beneath base path '/actuator'
+2022-10-28 09:27:33,833 INFO  [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatWebServer:Tomcat started on port(s): 8080 (http) with context path ''
+2022-10-28 09:27:33,869 INFO  [restartedMain] com.visionrent.VisionrentApplication:Started VisionrentApplication in 17.326 seconds (JVM running for 19.025)
+2022-10-28 09:27:45,372 INFO  [http-nio-8080-exec-1] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]:Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-10-28 09:28:14,440 INFO  [SpringApplicationShutdownHook] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean:Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-10-28 09:28:14,461 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource:HikariPool-1 - Shutdown initiated...
+2022-10-28 09:28:14,505 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource:HikariPool-1 - Shutdown completed.

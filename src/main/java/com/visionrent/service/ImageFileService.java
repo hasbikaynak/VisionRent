@@ -2,6 +2,8 @@ package com.visionrent.service;
 
 import com.visionrent.domain.ImageData;
 import com.visionrent.domain.ImageFile;
+import com.visionrent.exception.ResourceNotFoundException;
+import com.visionrent.exception.message.ErrorMessage;
 import com.visionrent.repository.ImageFileRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -30,5 +32,10 @@ public class ImageFileService {
         }
         imageFileRepository.save(imageFile);
         return imageFile.getId();
+    }
+
+    public ImageFile getImageById(String id) {
+       ImageFile imageFile = imageFileRepository.findById(id).orElseThrow(()-> new ResourceNotFoundException(String.format(ErrorMessage.IMAGE_NOT_FOUND_MESSAGE,id)));
+       return imageFile;
     }
 }
