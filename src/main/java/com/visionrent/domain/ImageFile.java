@@ -20,13 +20,9 @@ public class ImageFile extends BaseEntity{
     @GeneratedValue(generator = "uuid")
     @GenericGenerator(name = "uuid",strategy = "uuid2")
     private String id;
-
     private String name;
-
     private String type;
-
     private String length;
-
     @OneToOne(cascade = CascadeType.ALL)
     private ImageData imageData;
 
