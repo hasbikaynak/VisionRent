@@ -25,3 +25,6 @@
 2022-11-03 15:57:55,819 INFO  [restartedMain] org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver:Exposing 15 endpoint(s) beneath base path '/actuator'
 2022-11-03 15:57:55,937 INFO  [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatWebServer:Tomcat started on port(s): 8080 (http) with context path ''
 2022-11-03 15:57:55,972 INFO  [restartedMain] com.visionrent.VisionrentApplication:Started VisionrentApplication in 28.845 seconds (JVM running for 32.408)
+2022-11-03 16:02:50,586 INFO  [SpringApplicationShutdownHook] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean:Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-11-03 16:02:50,710 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource:HikariPool-1 - Shutdown initiated...
+2022-11-03 16:02:50,754 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource:HikariPool-1 - Shutdown completed.
