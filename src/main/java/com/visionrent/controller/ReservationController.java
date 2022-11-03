@@ -177,7 +177,8 @@ public class ReservationController {
 			@RequestParam("size") int size,
 			@RequestParam("sort") String prop,
 			@RequestParam(value="direction",required=false,defaultValue="DESC") Direction direction ){
-		
+
+
 		Pageable pageable=PageRequest.of(page, size, Sort.by(direction,prop));
 		
 	    User user= userService.getCurrentUser();
