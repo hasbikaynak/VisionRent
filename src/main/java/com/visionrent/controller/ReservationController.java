@@ -185,7 +185,7 @@ public class ReservationController {
 		Page<ReservationDTO> reservationDTOPage = reservationService.findReservationPageByUser(user, pageable);
 		return ResponseEntity.ok(reservationDTOPage);
 	}
-	
+
 	@DeleteMapping("/admin/{id}/auth")
 	@PreAuthorize("hasRole('ADMIN')")
 	public ResponseEntity<VRResponse> deleteReservation(@PathVariable Long id){
