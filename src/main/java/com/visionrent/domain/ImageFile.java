@@ -32,7 +32,7 @@ public class ImageFile extends BaseEntity {
 	
 	private String type;
 	
-	private long length;
+	private Long length;
 	
 	@OneToOne(cascade=CascadeType.ALL)
 	private ImageData imageData;
@@ -41,7 +41,7 @@ public class ImageFile extends BaseEntity {
     	this.name=name;
     	this.type=type;
     	this.imageData=imageData;
-    	this.length=imageData.getData().length;
+    	this.length= (long) imageData.getData().length;
     }
 	
 }
